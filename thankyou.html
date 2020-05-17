@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Thank you!</title>
+</head>
+<body id="body">
+</body>
+<script>
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+var cvu = getParameterByName('cvu');
+
+var img = new Image(); 
+img.src = 'https://www.facebook.com/tr?id=' + cvu + '&noscript=1&ev=Lead'; 
+document.getElementById('body').appendChild(img); 
+
+
+</script>
+</html>
